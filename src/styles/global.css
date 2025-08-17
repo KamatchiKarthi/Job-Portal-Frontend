@@ -1,0 +1,11 @@
+@import "tailwindcss";
+
+/* Custom styles */
+body {
+  font-family: 'Inter', sans-serif;
+}
+
+/* 
+  To style Ant Design components with Tailwind, 
+  use Tailwind classes in your JSX, not with @apply in CSS.
+*/
