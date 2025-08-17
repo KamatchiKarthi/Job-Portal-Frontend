@@ -4,8 +4,10 @@ const instance = axios.create({
   baseURL: import.meta.env.VITE_APP_TOKEN_KEY,
   headers: {
     Accept: 'application/json',
+    'Content-Type': 'application/json',
   },
   timeout: 10000,
+  withCredentials: true,
 });
 
 instance.interceptors.request.use(
