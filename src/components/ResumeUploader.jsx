@@ -32,7 +32,7 @@ const ResumeUploader = ({ resume, onUpdate }) => {
         <div className="flex items-center space-x-4">
           <FilePdfOutlined className="text-red-500 text-2xl" />
           <a
-            href={`${import.meta.env.VITE_APP_TOKEN_KEY}/${resume.trim()}`}
+            href={`${import.meta.env.VITE_APP_TOKEN_KEY}${resume.trim()}`}
             target="_blank"
             rel="noopener noreferrer"
             className="text-blue-600 hover:underline"
