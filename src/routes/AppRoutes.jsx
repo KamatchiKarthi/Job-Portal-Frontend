@@ -9,7 +9,7 @@ import Login from '../pages/Auth/login';
 import Register from '../pages/Auth/Register';
 import JobList from '../pages/Jobs/JobList';
 import JobDetails from '../pages/Jobs/JobDetails';
-import NotFound from '../pages/NotFound';
+import NotFound from '../pages/User/Notfound';
 import Home from '../components/Home';
 
 // Protected pages
