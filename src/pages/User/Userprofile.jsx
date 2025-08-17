@@ -107,9 +107,7 @@ const UserProfile = () => {
             size={100}
             src={
               userProfile.profilepicture
-                ? `${
-                    import.meta.env.VITE_APP_TOKEN_KEY
-                  }${userProfile.profilepicture.trim()}`
+                ? `${import.meta.env.VITE_APP_TOKEN_KEY}${userProfile.profilepicture.trim()}`
                 : null
             }
             icon={!userProfile.profilepicture && <UserOutlined />}
