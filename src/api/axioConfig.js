@@ -3,7 +3,6 @@ import axios from 'axios';
 const instance = axios.create({
   baseURL: import.meta.env.VITE_APP_TOKEN_KEY,
   headers: {
-    // 'Content-Type' : 'application/json',
     Accept: 'application/json',
   },
   timeout: 10000,

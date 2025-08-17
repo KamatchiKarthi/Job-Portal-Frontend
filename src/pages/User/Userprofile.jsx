@@ -23,7 +23,7 @@ const UserProfile = () => {
         setProfile(response.user);
         setUser(prev => ({ ...prev, ...response.user }));
       } catch (error) {
-        message.error('Failed to load profile');
+        message.error('Failed to load profile', error);
       } finally {
         setLoading(false);
       }
@@ -38,7 +38,7 @@ const UserProfile = () => {
       setProfile(response.user);
       setUser(prev => ({ ...prev, ...response.user }));
     } catch (error) {
-      message.error('Failed to refresh profile');
+      message.error('Failed to refresh profile', error);
     }
   };
 
