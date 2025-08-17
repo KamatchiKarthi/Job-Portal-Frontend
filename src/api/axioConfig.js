@@ -1,7 +1,7 @@
 import axios from 'axios';
 
 const instance = axios.create({
-  baseURL: 'http://localhost:5002/', // Default fallback
+  baseURL: import.meta.env.VITE_APP_TOKEN_KEY,
   headers: {
     // 'Content-Type' : 'application/json',
     Accept: 'application/json',
@@ -10,7 +10,7 @@ const instance = axios.create({
 });
 
 instance.interceptors.request.use(
-  config => {      
+  config => {
     const user = JSON.parse(localStorage.getItem('user')) || {};
     if (user?.token) {
       config.headers.Authorization = `Bearer ${user.token}`;
