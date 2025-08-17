@@ -22,7 +22,7 @@ const CreateJob = () => {
           form.setFieldsValue(response.data);
           setIsEditing(true);
         } catch (error) {
-          alert('Failed to load job details' ,error);
+          message.warning('Failed to load job details' ,error);
           navigate('/employer');
         } finally {
           setLoading(false);
@@ -37,10 +37,10 @@ const CreateJob = () => {
       setLoading(true);
       if (isEditing) {
         await updateJob(id, values);
-        alert('Job updated successfully!');
+        message.success('Job updated successfully!');
       } else {
         await createJob(values);
-        alert('Job created successfully!');
+        message.success('Job created successfully!');
       }
       navigate('/employer/dashboard');
     } catch (error) {

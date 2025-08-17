@@ -1,6 +1,6 @@
 import { useState } from 'react';
 import { useNavigate, Link } from 'react-router-dom';
-import { Form, Input, Button, Select, Card, Divider } from 'antd';
+import { Form, Input, Button, Select, Card, Divider, message } from 'antd';
 import {
   UserOutlined,
   MailOutlined,
@@ -30,10 +30,10 @@ const Register = () => {
       console.log(values);
 
       await register(userData);
-      alert('Registration successful!');
+      message.success('Registration successful!');
       navigate('/login');
     } catch (error) {
-      alert(error.response?.data?.message || 'Registration failed');
+      message.warning(error.response?.data?.message || 'Registration failed');
     } finally {
       setLoading(false);
     }

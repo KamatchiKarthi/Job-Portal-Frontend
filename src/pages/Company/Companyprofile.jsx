@@ -4,6 +4,7 @@ import { EditOutlined, PlusOutlined } from '@ant-design/icons';
 import { useAuth } from '../../Context/Authcontext';
 import { getCompanyProfile } from '../../api/companyApi';
 import { useNavigate } from 'react-router-dom';
+import LoadingSpinner from '../../components/LoadSpinner';
 
 const CompanyProfile = () => {
   const { loading } = useAuth();
@@ -39,7 +40,7 @@ const CompanyProfile = () => {
   if (loadings) {
     return (
       <div className="flex justify-center items-center h-64">
-        <Spin size="large" />
+        <LoadingSpinner />
       </div>
     );
   }

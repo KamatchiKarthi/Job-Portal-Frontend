@@ -8,7 +8,7 @@ import {
   message,
   Table,
   Spin,
-  Tag,
+  Popconfirm,
 } from 'antd';
 import { PlusOutlined } from '@ant-design/icons';
 import { Link, useNavigate } from 'react-router-dom';
@@ -62,7 +62,7 @@ const EmployerDashboard = () => {
   const handleDelete = async id => {
     try {
       await deleteJob(id);
-      alert('Job deleted successfully!');
+      message.success('Job deleted successfully!');
       setJobs(prev => prev.filter(job => job._id !== id));
       setTotalJobs(prev => prev - 1);
     } catch (err) {
@@ -106,9 +106,16 @@ const EmployerDashboard = () => {
           >
             Edit
           </Button>
-          <Button type="link" danger onClick={() => handleDelete(record._id)}>
-            Delete
-          </Button>
+          <Popconfirm
+            title="Are you sure you want to delete this?"
+            onConfirm={() => handleDelete(record._id)}
+            okText="Yes"
+            cancelText="No"
+          >
+            <Button type="link" danger>
+              Delete
+            </Button>
+          </Popconfirm>
         </>
       ),
     },

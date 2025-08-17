@@ -1,5 +1,5 @@
 import { useState, useEffect } from 'react';
-import { Tabs, Card, List, Spin, Tag, Button } from 'antd';
+import { Tabs, Card, List, Spin, Tag, Button, message } from 'antd';
 import { getRecommendedJobs, getMyApplication } from '../../api/applicationApi';
 import JobCard from '../../components/Jobcard';
 import { Link, Outlet } from 'react-router';
@@ -23,7 +23,7 @@ const JobSeekerDashboard = () => {
         console.log(jobResponse.data);
         setRecommendedJobs(jobResponse.data);
       } catch (error) {
-        alert('failed to fetch movies', error);
+        message.warning('failed to fetch movies', error);
       } finally {
         setLoading(false);
       }
@@ -40,7 +40,7 @@ const JobSeekerDashboard = () => {
       console.log(response.applications);
       setApplications(response.applications || []);
     } catch (error) {
-      alert('failed to load applications', error);
+      message.warning('failed to load applications', error);
     } finally {
       setLoading(prev => ({ ...prev, applications: false }));
     }

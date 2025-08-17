@@ -43,7 +43,7 @@ const EditProfile = () => {
       setUser(updatedUser); // update context
 
       localStorage.setItem('user', JSON.stringify(updatedUser)); // update storage
-      alert('Profile updated successfully!');
+      message.success('Profile updated successfully!');
       navigate('/profile');
     } catch (error) {
       message.error(error.response?.data?.message || 'Update failed');

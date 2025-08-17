@@ -1,6 +1,6 @@
 import { useState, useEffect } from 'react';
 import { useParams, useNavigate } from 'react-router-dom';
-import { Form, Input, Button, message, Card, Spin } from 'antd';
+import { Form, Input, Button, message, Card,  } from 'antd';
 import { getJobById } from '../../api/jobsApi';
 import { applyForJob } from '../../api/applicationApi';
 import { useAuth } from '../../Context/Authcontext';
@@ -24,7 +24,7 @@ const ApplyJob = () => {
         console.log(response.data);
         setJob(response.data);
       } catch (error) {
-        alert('Failed to load job details', error);
+        message.warning('Failed to load job details', error);
         navigate('/jobs');
       } finally {
         setLoading(false);
@@ -49,7 +49,7 @@ const ApplyJob = () => {
       // Navigate back with applied=true so JobDetails updates UI
       navigate(`/jobs/${id}`, { state: { applied: true } });
     } else {
-      alert(errorMessage);
+      message.warning(errorMessage);
     }
   } finally {
     setApplying(false);

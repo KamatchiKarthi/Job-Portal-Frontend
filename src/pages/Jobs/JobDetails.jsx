@@ -9,6 +9,7 @@ import {
   Space,
   Skeleton,
   Avatar,
+  message,
 } from 'antd';
 import {
   DollarOutlined,
@@ -50,7 +51,7 @@ const JobDetails = () => {
           setAlreadyApplied(true);
         }
       } catch (error) {
-        alert('Failed to load job details', error);
+        message.warning('Failed to load job details', error);
         navigate('/jobs');
       } finally {
         setLoading(false);

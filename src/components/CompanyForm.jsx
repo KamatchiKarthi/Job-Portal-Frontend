@@ -10,7 +10,7 @@ export default function CreateCompanyForm({ onSuccess }) {
     try {
       const response = await CreateCompany(values);
       if (response.data) {
-        alert("Company profile created successfully!");
+        message.success("Company profile created successfully!");
         onSuccess?.(); 
       } else {
         message.error(response.message || "Failed to create company profile");
