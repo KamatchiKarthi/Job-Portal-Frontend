@@ -1,7 +1,6 @@
 import { Navigate, useLocation } from 'react-router-dom';
 import { useAuth } from '../Context/Authcontext';
-import { LoadingOutlined } from '@ant-design/icons';
-import { Spin } from 'antd';
+import LoadingSpinner from '../components/LoadSpinner';
 
 const PrivateRoute = ({ children, allowedRoles }) => {
   const { user, loading } = useAuth();
@@ -17,7 +16,7 @@ const PrivateRoute = ({ children, allowedRoles }) => {
           height: '100vh',
         }}
       >
-        <Spin indicator={<LoadingOutlined style={{ fontSize: 48 }} spin />} />
+        <LoadingSpinner/>
       </div>
     );
   }

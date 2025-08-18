@@ -1,8 +1,8 @@
-import Axiosinstance from './axioConfig';
+import instance from './axioConfig';
 
 export const CreateCompany = async companydata => {
   try {
-    const response = await Axiosinstance.post('company/create', companydata);
+    const response = await instance.post('company/create', companydata);
     return response.data;
   } catch (error) {
     console.log(error);
@@ -11,7 +11,7 @@ export const CreateCompany = async companydata => {
 
 export const updateCompanyProfile = async companydata => {
   try {
-    const response = await Axiosinstance.put('company/update', companydata);
+    const response = await instance.put('company/update', companydata);
     return response.data;
   } catch (error) {
     console.log(error);
@@ -20,7 +20,7 @@ export const updateCompanyProfile = async companydata => {
 
 export const getCompanyProfile = async () => {
   try {
-    const response = await Axiosinstance.get('company/me');
+    const response = await instance.get('company/me');
     return response.data;
   } catch (error) {
     console.log(error);
